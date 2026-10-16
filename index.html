@@ -200,6 +200,8 @@ svg .rect-a{fill:var(--accent);fill-opacity:.18;stroke:var(--accent);stroke-widt
 .check input{margin-top:6px;accent-color:var(--accent)}
 .check input:checked + span{color:var(--muted);text-decoration:line-through}
 .progress{font:500 .85rem var(--f-mono);color:var(--muted)}
+.xref{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:.85rem;color:var(--muted);margin:-6px 0 14px}
+.xref a{font:600 .8rem var(--f-mono);text-decoration:none;border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:2px 10px}
 footer{margin-top:60px;padding-top:18px;border-top:1px solid var(--line);color:var(--muted);font-size:.85rem}
 </style>
 
@@ -230,6 +232,7 @@ footer{margin-top:60px;padding-top:18px;border-top:1px solid var(--line);color:v
     <li><a href="#markov"><span class="l">L25</span><span>Markov chain</span></a></li>
     <li><a href="#queue"><span class="l">L26–27</span><span>Queueing M/M/1</span></a></li>
     <li class="grp">ก่อนสอบ</li>
+    <li><a href="#exam"><span class="l">EXAM</span><span>ข้อสอบเก่า Final 2564</span></a></li>
     <li><a href="#crit"><span class="l">CALC</span><span>หาค่าวิกฤต</span></a></li>
     <li><a href="#check"><span class="l">LIST</span><span>จุดพลาด + checklist</span></a></li>
   </ul></nav>
@@ -248,7 +251,8 @@ footer{margin-top:60px;padding-top:18px;border-top:1px solid var(--line);color:v
     <a href="#biv"><b>Ch7–8</b>หลายตัวแปร</a><span class="arr">→</span>
     <a href="#proc"><b>Ch10–11</b>Process · Poisson</a><span class="arr">→</span>
     <a href="#markov"><b>Ch12</b>Markov</a><span class="arr">→</span>
-    <a href="#queue"><b>Q</b>คิว M/M/1</a>
+    <a href="#queue"><b>Q</b>คิว M/M/1</a><span class="arr">→</span>
+    <a href="#exam"><b>EXAM</b>ข้อสอบเก่า</a>
   </div>
 </header>
 
@@ -511,6 +515,7 @@ footer{margin-top:60px;padding-top:18px;border-top:1px solid var(--line);color:v
 <!-- ===================== L17 CI mean ===================== -->
 <section class="ch" id="cimean">
   <div class="ch-head"><span class="lec">L17</span><span class="sec">Ch6.3–6.5 · Confidence intervals</span><h2>Confidence interval ของ mean</h2></div>
+  <p class="xref">ออกสอบจริง: <a href="#exam-q1">ข้อสอบ Final 2564 ข้อ 1</a></p>
   <div class="idea">
     <span class="tag">เข้าใจก่อน</span>
     <p>Mₙ ไม่เท่ากับ m พอดี แต่แกว่งอยู่รอบ m ด้วยความกว้าง (standard deviation) \(\sigma/\sqrt n\) เราจึงตอบเป็นช่วง \(M_n\pm\delta\) แล้วเลือก δ ให้ช่วงนี้ "ครอบ" m ได้ 100(1−α)% ของครั้งที่ทำการทดลองซ้ำ</p>
@@ -706,6 +711,7 @@ footer{margin-top:60px;padding-top:18px;border-top:1px solid var(--line);color:v
 <!-- ===================== L19–20 Hypothesis test ===================== -->
 <section class="ch" id="test">
   <div class="ch-head"><span class="lec">L19–20</span><span class="sec">Ch6.6 · Hypothesis tests for the mean</span><h2>Hypothesis test ของ mean</h2></div>
+  <p class="xref">ออกสอบจริง: <a href="#exam-q2">ข้อสอบ Final 2564 ข้อ 2</a></p>
   <div class="idea">
     <span class="tag">เข้าใจก่อน: เหมือนศาล</span>
     <p><b>H₀ (null hypothesis)</b> = ฝ่ายที่ได้ benefit of the doubt เหมือนจำเลยที่ถือว่าบริสุทธิ์ไว้ก่อน · <b>H₁ (alternative hypothesis)</b> = ฝ่ายที่มีภาระพิสูจน์ (burden of proof) ต้องมีหลักฐานหนักแน่นจึงจะเชื่อ</p>
@@ -856,6 +862,7 @@ footer{margin-top:60px;padding-top:18px;border-top:1px solid var(--line);color:v
 <!-- ===================== Ch7 Bivariate ===================== -->
 <section class="ch" id="biv">
   <div class="ch-head"><span class="lec">L21–22</span><span class="sec">Ch7.1–7.2 · Bivariate random variables</span><h2>สองตัวแปรพร้อมกัน: joint cdf และ joint density</h2></div>
+  <p class="xref">ออกสอบจริง: <a href="#exam-q3">ข้อสอบ Final 2564 ข้อ 3</a></p>
   <div class="idea">
     <span class="tag">เข้าใจก่อน</span>
     <p>เมื่อมีสองตัวแปร X, Y ที่เกิดจากการทดลองเดียวกัน เราต้องบอกความน่าจะเป็นของ <b>คู่</b> (X, Y) ว่าตกในพื้นที่ใดบนระนาบ ข้อมูลทั้งหมดอยู่ใน joint cdf หรือ joint density ส่วน marginal คือการ "ลืม" ตัวแปรหนึ่งไป</p>
@@ -1020,6 +1027,7 @@ footer{margin-top:60px;padding-top:18px;border-top:1px solid var(--line);color:v
 <!-- ===================== Ch10 Random processes ===================== -->
 <section class="ch" id="proc">
   <div class="ch-head"><span class="lec">L23–24</span><span class="sec">Ch10 · Introduction to random processes</span><h2>Random process และ stationarity</h2></div>
+  <p class="xref">ออกสอบจริง: <a href="#exam-q4">ข้อสอบ Final 2564 ข้อ 4</a></p>
   <div class="idea">
     <span class="tag">เข้าใจก่อน: มองได้สองแบบ</span>
     <p>Random process = ชุดของ random variable ที่เรียงตามเวลา X_t(ω) มีสองตัวแปร:</p>
@@ -1228,6 +1236,7 @@ footer{margin-top:60px;padding-top:18px;border-top:1px solid var(--line);color:v
 <!-- ===================== Queueing ===================== -->
 <section class="ch" id="queue">
   <div class="ch-head"><span class="lec">L26–27</span><span class="sec">Queueing · Little's theorem · M/M/1</span><h2>ทฤษฎีคิว: Little's theorem และ M/M/1</h2></div>
+  <p class="xref">ออกสอบจริง: <a href="#exam-q5">ข้อสอบ Final 2564 ข้อ 5</a></p>
   <div class="idea">
     <span class="tag">เข้าใจก่อน</span>
     <p>ใน data network ลูกค้า = packet และ service time = เวลาส่ง packet ออกสาย = L/C (ความยาว bits / ความเร็วสาย bits/s) คำถามหลักคือ เฉลี่ยแล้วมีของค้างในระบบกี่ตัว และแต่ละตัวต้องรอนานเท่าไร</p>
@@ -1345,6 +1354,104 @@ footer{margin-top:60px;padding-top:18px;border-top:1px solid var(--line);color:v
     <div class="out" id="mm-out"></div>
     <div id="mm-v"></div>
     <figure><div class="fbox"><svg id="fig-pn" role="img" aria-label="กราฟ p_n ของ M/M/1"></svg></div><figcaption>pₙ = ρⁿ(1 − ρ) = ความน่าจะเป็นที่ในระบบมี n ตัว</figcaption></figure>
+  </div>
+</section>
+
+
+<!-- ===================== Past exam ===================== -->
+<section class="ch" id="exam">
+  <div class="ch-head"><span class="lec">EXAM</span><span class="sec">Final · ภาคต้น ปีการศึกษา 2564 (10 พ.ย. 2021) · Open book · 3 ชั่วโมง</span><h2>ข้อสอบเก่า Final 2564 พร้อมเฉลยละเอียด</h2></div>
+  <div class="idea">
+    <span class="tag">อ่านก่อน: ข้อสอบชุดนี้ตัวเลขไม่เหมือนกันทุกคน</span>
+    <p>ข้อสอบมี 5 ข้อ ข้อละ 6 คะแนน (ข้อที่มี n ข้อย่อย ข้อย่อยละ 6/n คะแนน) ตัวเลขในแต่ละข้อขึ้นกับค่า <b>j ∈ {1, 2, 3, 4}</b> ที่คำนวณจากรหัสนักศึกษา จึงต้องหา j ให้ถูกก่อน ผิดตรงนี้คือผิดทั้งฉบับ</p>
+    <ol>
+      <li>x₀ = เลขสองหลักสุดท้ายของรหัส โดยไม่นับขีด เช่น รหัส 613040102-6 ได้ x₀ = 26</li>
+      <li>\(\mathring{\pi}\)(i) = เลขโดดตำแหน่งทศนิยมที่ i ของ \(\hat\pi\) (\(\hat\pi\) ในข้อสอบ <b>ไม่ใช่ π จริง</b> ตัวเลขบางหลักถูกเปลี่ยน ต้องนับจากที่ให้มา) ถ้า i ไม่อยู่ใน 1–105 ให้ \(\mathring{\pi}\)(i) = 5</li>
+      <li>j = 2^\(\mathring{\pi}\)(x₀) mod 5 · ตัวอย่างในข้อสอบ: \(\mathring{\pi}\)(26) = 8 ⇒ j = 2⁸ mod 5 = 256 mod 5 = 1</li>
+    </ol>
+  </div>
+  <div class="plate"><span class="tag">π̂ (pi hat) ที่ให้ในข้อสอบ (105 ตำแหน่ง)</span>
+    <p class="mono" style="color:var(--ink);font-size:.9rem;line-height:1.9;word-spacing:.35em">3.14159 26535 89793 23846 26433 83279 51288 41971 69399 37512<br>58239 74944 59234 78164 56286 26899 86287 34825 34211 78679 82148</p>
+    <p>ทางลัด: 2^d mod 5 วนทุก 4 ค่า (2⁰ → 1, 2¹ → 2, 2² → 4, 2³ → 3, 2⁴ → 1, …) จึงดูแค่ d mod 4 ก็พอ</p>
+  </div>
+  <div class="tool" id="tool-j">
+    <span class="tag">ลองเอง</span><h4>หา j จากรหัส แล้วดูเฉลยตาม j ของคุณ</h4>
+    <p class="hint">พิมพ์รหัสนักศึกษา หรือเลือก j ตรงๆ ก็ได้ · ค่าเริ่มต้น j = 2 ตรงกับชีทเฉลยลายมือที่แนบมา · ตัวเลขเฉลยทุกข้อด้านล่างจะเปลี่ยนตาม</p>
+    <div class="fields">
+      <label for="ej-id">รหัสนักศึกษา<input id="ej-id" type="text" placeholder="613040102-6" autocomplete="off"></label>
+      <label for="ej-j">j<select id="ej-j"><option>1</option><option selected>2</option><option>3</option><option>4</option></select></label>
+    </div>
+    <div id="ej-v"></div>
+  </div>
+  <div class="plate"><span class="tag">สูตรที่แนบมากับข้อสอบ</span>
+    <p>Poisson, Geometry₁, exp(λ) พร้อม \(E[X^n]=n!/\lambda^n\), Laplace \(f(x)=\frac\lambda2e^{-\lambda|x|}\) · \(\frac{1}{1-z}=\sum z^n\), \(e^z=\sum\frac{z^n}{n!}\), อนุพันธ์พื้นฐาน, product rule, \(\int_0^\infty x^ne^{-ax}dx=\frac{n!}{a^{n+1}}\), \(\int e^{ax}dx=\frac1ae^{ax}\) · ตาราง Φ(x) และ Q(x) = 1 − Φ(x) ที่ x = 0.0–3.9 · ตาราง y_α/2 ต้องเตรียมไปเอง (open book)</p>
+  </div>
+
+  <!-- Q1 -->
+  <div class="ex" id="exam-q1">
+    <h4><span class="no">ข้อ 1</span>Confidence interval ของ mean เมื่อรู้ variance</h4>
+    <div class="q"><b>โจทย์:</b> กำหนดลำดับ (αⱼ) = (0.02, 0.03, 0.04, 0.05) และ α = αⱼ ให้ X₁, X₂, …, X₁₀₁ เป็น i.i.d. random variables ที่มี variance เท่ากับ 2.1 ถ้า sample mean เท่ากับ \(8.32+\frac{j}{1000}\) จงหา (1 − α) confidence interval สำหรับ E(X₃) (ใช้ทศนิยม 5 ตำแหน่ง)</div>
+    <details class="sol" open><summary>วิธีทำ</summary><div class="steps">
+      <div class="step"><span class="n">1</span><div><b>อ่านโจทย์ให้ออก:</b> Xᵢ เป็น i.i.d. ดังนั้น E(X₃) = E(Xᵢ) = m ตัวเลข 3 ไม่ได้มีความหมายพิเศษ · รู้ σ² = 2.1 และ n = 101 ใหญ่ ⇒ ใช้กรณี 6.3 (รู้ σ, CLT)</div></div>
+      <div class="step"><span class="n">2</span><div>เลือก α = αⱼ แล้วหา y จาก \(\Phi(y_{\alpha/2})=1-\alpha/2\) (Table 6.2)</div></div>
+      <div class="step"><span class="n">3</span><div>\[m=M_n\pm\frac{\sigma\,y_{\alpha/2}}{\sqrt n}=\left(8.32+\frac{j}{1000}\right)\pm\frac{\sqrt{2.1}\;y_{\alpha/2}}{\sqrt{101}}\]</div></div>
+      <div class="step"><span class="n">=</span><div><div class="out" id="ex1-out"></div></div></div>
+    </div></details>
+    <div class="warn"><span class="tag">จุดที่ชีทเฉลยลายมือพลาด</span><p>ชีทใช้ \(\sqrt3\) เป็นตัวหาร (น่าจะสับสนกับเลข 3 ใน E(X₃)) ได้ δ = 1.81555 และช่วง [6.50645, 10.13755] ที่ถูกต้องคือหารด้วย \(\sqrt{n}=\sqrt{101}\) ช่วงจึงแคบกว่ามาก</p></div>
+  </div>
+
+  <!-- Q2 -->
+  <div class="ex" id="exam-q2">
+    <h4><span class="no">ข้อ 2</span>Hypothesis test: ใครได้ benefit of the doubt</h4>
+    <div class="q"><b>โจทย์:</b> ผู้ให้บริการอินเทอร์เน็ตอ้างว่าการเชื่อมโยงมีความน่าจะเป็นของการสูญหายหนึ่งแพ็กเกตไม่เกิน p₀ นักศึกษาจึงทดสอบข้ออ้างนี้ด้วยการทดลองส่ง n แพ็กเกต ให้ Xᵢ = 1 ถ้าแพ็กเกตลำดับที่ i สูญหาย และ Xᵢ = 0 ถ้าไม่สูญหาย สมมตินักศึกษาคำนวณได้ \(Z_n=\frac{M_n-p_0}{S_n/\sqrt n}=1.4+\frac{j}{100}\)<br>(a) ถ้าผู้ให้บริการเอา E[Xᵢ] ≤ p₀ เป็น null hypothesis เขาควรยอมรับข้ออ้างนี้ ณ ระดับนัยสำคัญ 0.07 หรือไม่ เพราะอะไร<br>(b) ถ้านักศึกษาต้องการจับผิดด้วยการเอา E[Xᵢ] &gt; p₀ เป็น null hypothesis นักศึกษาควรยอมรับข้ออ้างของผู้ให้บริการ ณ ระดับนัยสำคัญ 0.07 หรือไม่ เพราะอะไร</div>
+    <details class="sol" open><summary>วิธีทำ</summary><div class="steps">
+      <div class="step"><span class="n">0</span><div>ทั้งสองข้อเป็น <b>one-tailed</b> ⇒ ใช้ y_α ไม่ใช่ y_α/2 · α = 0.07 ⇒ Table 6.6: \(y_\alpha=1.476\) (ชีทหาค่า y_α/2 = 1.812 มาด้วยแต่ไม่ได้ใช้)</div></div>
+      <div class="step"><span class="n">a</span><div>H₀: E[Xᵢ] ≤ p₀ vs H₁: E[Xᵢ] &gt; p₀ ⇒ <b>แบบ 1</b> ⇒ ยอมรับ H₀ เมื่อ \(Z_n\le y_\alpha\) (rejection region คือ \(Z_n&gt;1.476\))</div></div>
+      <div class="step"><span class="n">b</span><div>H₀: E[Xᵢ] &gt; p₀ vs H₁: E[Xᵢ] ≤ p₀ ⇒ <b>แบบ 2</b> ⇒ ยอมรับ H₀ เมื่อ \(Z_n&gt;-y_\alpha\) (rejection region คือ \(Z_n\le-1.476\))</div></div>
+      <div class="step"><span class="n">=</span><div><div class="out" id="ex2-out"></div><div id="ex2-v"></div></div></div>
+      <div class="step"><span class="n">*</span><div><b>บทเรียนของข้อนี้:</b> data ชุดเดียวกันให้ข้อสรุปตรงข้ามกันได้ ขึ้นกับว่าใครได้ benefit of the doubt · (a) ข้ออ้างอยู่ใน H₀ จึงรอดเพียงเพราะ data ค้านไม่แรงพอ ซึ่งเป็นหลักฐานที่อ่อน · (b) ข้ออ้างอยู่ใน H₁ ต้องมีหลักฐานหนักแน่น แต่ Zₙ เป็นบวก (Mₙ &gt; p₀) จึงไม่มีหลักฐานสนับสนุนเลย ฝั่งผู้ซื้อบริการจึงควรตั้งแบบ (b)</div></div>
+    </div></details>
+    <div class="warn"><span class="tag">จุดที่ชีทเฉลยลายมือพลาด</span><p>ชีทหาช่วง reject ถูกทั้งสองข้อ แต่สรุปกลับด้าน (a) เขียนว่า "ไม่ควรยอมรับ" และ (b) เขียนว่า "ควรยอมรับ" ทั้งที่ Zₙ ไม่ตกในช่วง reject ทั้งสองกรณี ซึ่งแปลว่ายอมรับ H₀ ทั้งคู่ คำตอบที่ตรงกับเกณฑ์คือ (a) ยอมรับข้ออ้าง (b) ไม่ยอมรับข้ออ้าง</p></div>
+  </div>
+
+  <!-- Q3 -->
+  <div class="ex" id="exam-q3">
+    <h4><span class="no">ข้อ 3</span>Joint density จาก joint cdf</h4>
+    <div class="q"><b>โจทย์:</b> ให้ \(F_{XY}(x,y)=\begin{cases}\dfrac{x+e^{-y(x+j)}}{x+j}-e^{-y},&x,y&gt;0\\0,&\text{otherwise}\end{cases}\) จงหา joint density \(f_{XY}(x,y)\)</div>
+    <details class="sol" open><summary>วิธีทำ</summary><div class="steps">
+      <div class="step"><span class="n">1</span><div>ข้อนี้คือ Ex 7.12 ที่สลับบทบาท x กับ y และเปลี่ยน 1 เป็น j · ใช้ \(f_{XY}=\frac{\partial^2}{\partial x\,\partial y}F_{XY}\) และดิฟเทียบ y ก่อนจะง่ายกว่า · แยกเทอม \[F_{XY}=\frac{x}{x+j}+\frac{e^{-y(x+j)}}{x+j}-e^{-y}\]</div></div>
+      <div class="step"><span class="n">2</span><div>ดิฟเทียบ y: เทอมแรกไม่มี y จึงเป็น 0 · เทอมสองดึง −(x + j) ออกมาตัดกับตัวส่วน \[\frac{\partial F_{XY}}{\partial y}=0+\frac{-(x+j)\,e^{-y(x+j)}}{x+j}+e^{-y}=e^{-y}-e^{-y(x+j)}\]</div></div>
+      <div class="step"><span class="n">3</span><div>ดิฟต่อเทียบ x: e⁻ʸ ไม่มี x จึงหายไป \[\frac{\partial^2F_{XY}}{\partial x\,\partial y}=-(-y)\,e^{-y(x+j)}=y\,e^{-y(x+j)}\]</div></div>
+      <div class="step"><span class="n">=</span><div>\[f_{XY}(x,y)=\begin{cases}y\,e^{-y(x+j)},&x,y&gt;0\\0,&\text{otherwise}\end{cases}\] <span class="ans" id="ex3-ans"></span></div></div>
+      <div class="step"><span class="n">*</span><div>ข้อสังเกตเสริม (ไม่ต้องตอบในข้อสอบ): ถ้า integrate ตรวจจะได้ \(\iint f_{XY}=\int_0^\infty e^{-jy}dy=1/j\) ฟังก์ชันนี้จึงเป็น density ที่ถูกต้องเฉพาะ j = 1 ข้อสอบต้องการวัดแค่การดิฟสองครั้ง</div></div>
+    </div></details>
+  </div>
+
+  <!-- Q4 -->
+  <div class="ex" id="exam-q4">
+    <h4><span class="no">ข้อ 4</span>Carrier with random phase</h4>
+    <div class="q"><b>โจทย์:</b> ระบบสื่อสารมีสัญญาณพาหะที่เครื่องรับเป็น \(X_t=\cos\!\left(\frac{\sqrt5}{j}\pi t+\Theta\right)\) โดย Θ ~ uniform[−π, π] (a) จงหาฟังก์ชันค่าเฉลี่ยของ X_t (b) จงหาฟังก์ชันสหสัมพันธ์ของ X_t</div>
+    <details class="sol" open><summary>วิธีทำ</summary><div class="steps">
+      <div class="step"><span class="n">0</span><div>ข้อนี้คือ Ex 10.8 ที่ \(2\pi f\) ถูกแทนด้วย \(\omega_0=\frac{\sqrt5}{j}\pi\) วิธีทำเหมือนเดิมทุกขั้น</div></div>
+      <div class="step"><span class="n">a</span><div>Fix t แล้ว integrate เทียบ θ ครบหนึ่งคาบ \[m_X(t)=E[X_t]=\int_{-\pi}^{\pi}\cos(\omega_0t+\theta)\frac{d\theta}{2\pi}=\frac{\sin(\omega_0t+\theta)}{2\pi}\Bigg|_{\theta=-\pi}^{\theta=\pi}=0\]</div></div>
+      <div class="step"><span class="n">b</span><div>ใช้ \(\cos A\cos B=\tfrac12[\cos(A+B)+\cos(A-B)]\) \[R_X(t_1,t_2)=\tfrac12E\big[\cos(\omega_0(t_1+t_2)+2\Theta)\big]+\tfrac12\cos(\omega_0(t_1-t_2))=\frac12\cos\!\left(\frac{\sqrt5}{j}\pi(t_1-t_2)\right)\] เทอมแรกเป็น 0 เพราะ integrate 2θ ครบสองคาบ</div></div>
+      <div class="step"><span class="n">=</span><div><div class="out" id="ex4-out"></div></div></div>
+      <div class="step"><span class="n">+</span><div>ถ้ามีข้อ (c) ถามต่อ: mean คงที่และ R_X ขึ้นกับ t₁ − t₂ เท่านั้น ⇒ X_t เป็น WSS (Ex 10.17)</div></div>
+    </div></details>
+    <div class="warn"><span class="tag">จุดที่ชีทเฉลยลายมือพลาด</span><p>ชีทตอบ \(R_X=\cos\!\left(\frac{\sqrt5}{2}\pi(t_1-t_2)\right)\) ขาดตัวคูณ ½ ที่มาจาก identity ของ cos A cos B</p></div>
+  </div>
+
+  <!-- Q5 -->
+  <div class="ex" id="exam-q5">
+    <h4><span class="no">ข้อ 5</span>Little's theorem กับร้านอาหาร</h4>
+    <div class="q"><b>โจทย์:</b> ลูกค้ามาที่ร้านอาหารญี่ปุ่นเพื่อซื้ออาหารด้วยอัตรา 5 คนต่อนาที แต่ละคนรออาหารเฉลี่ย 5 นาที ความน่าจะเป็นที่ลูกค้ารับประทานที่ร้านคือ 0.5 และห่อกลับบ้านคือ 0.5 ลูกค้าที่รับประทานที่ร้านใช้เวลาโดยเฉลี่ย 20 + j นาที จงหาจำนวนลูกค้าเฉลี่ยในร้าน (Hint: ประยุกต์ Little's theorem)</div>
+    <details class="sol" open><summary>วิธีทำ</summary><div class="steps">
+      <div class="step"><span class="n">1</span><div>มองทั้งร้านเป็นระบบเดียว ⇒ ใช้ \(N=\lambda T\) โดย λ = 5 คน/นาที ไม่ต้องสนว่าข้างในเป็นคิวแบบไหน (ไม่ใช่ M/M/1)</div></div>
+      <div class="step"><span class="n">2</span><div>T = เวลาเฉลี่ยที่ลูกค้าหนึ่งคนอยู่ในร้าน ใช้ค่าคาดหวังแบบมีเงื่อนไข: ทุกคนรอ 5 นาที แล้วครึ่งหนึ่งนั่งกินต่ออีก 20 + j นาที \[T=0.5\,(5+20+j)+0.5\,(5)=5+\frac{20+j}{2}\]</div></div>
+      <div class="step"><span class="n">3</span><div>\[N=\lambda T=5\left(5+\frac{20+j}{2}\right)=75+2.5j\]</div></div>
+      <div class="step"><span class="n">=</span><div><div class="out" id="ex5-out"></div></div></div>
+    </div></details>
+    <div class="warn"><span class="tag">ระวังการตีความ</span><p>เฉลยนี้ (และชีทลายมือ) ตีความว่า 20 + j นาทีคือเวลานั่งกิน <b>เพิ่มจาก</b> การรอ 5 นาที ถ้าตีความว่า 20 + j รวมเวลารอแล้ว จะได้ T = 0.5(20 + j) + 0.5(5) และ N = 62.5 + 2.5j ในห้องสอบควรเขียนสมมติฐานที่ใช้กำกับไว้</p></div>
   </div>
 </section>
 
@@ -1712,6 +1819,39 @@ function boot(){
   checklist();
 }
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
+
+/* ---------- past exam (Final 2564) ---------- */
+const PIHAT=('14159 26535 89793 23846 26433 83279 51288 41971 69399 37512 58239 74944 59234 78164 56286 26899 86287 34825 34211 78679 82148').replace(/\s/g,'');
+function examFromId(){
+  const raw=$('ej-id').value,dg=raw.replace(/\D/g,''),v=$('ej-v');
+  if(!raw.trim()){verdict(v,'info','ยังไม่ได้ใส่รหัส ใช้ j ที่เลือกไว้');return;}
+  if(dg.length<2){verdict(v,'no','รหัสต้องมีตัวเลขอย่างน้อย 2 หลัก');return;}
+  const x0=Number(dg.slice(-2));const d=(x0>=1&&x0<=105)?Number(PIHAT[x0-1]):5;const j=Math.pow(2,d)%5;
+  $('ej-j').value=String(j);
+  verdict(v,'ok',`x₀ = ${x0} ⇒ ${(x0>=1&&x0<=105)?'เลขโดดตำแหน่งที่ '+x0+' ของ π̂':'นอกช่วง 1–105 จึงใช้ค่า'} = ${d} ⇒ j = 2^${d} mod 5 = ${Math.pow(2,d)} mod 5 = ${j}`);
+  renderExam();
+}
+function renderExam(){
+  const j=Number($('ej-j').value);
+  const tab={1:[0.02,2.326],2:[0.03,2.170],3:[0.04,2.054],4:[0.05,1.960]};const [a,y]=tab[j];
+  const Mn=8.32+j/1000,d=y*Math.sqrt(2.1)/Math.sqrt(101);
+  cards($('ex1-out'),[['α = αⱼ',a],['1 − α',(1-a).toFixed(2)],['y_α/2 (Table 6.2)',y.toFixed(3)],['Mₙ',Mn.toFixed(3)],['δ = √2.1·y/√101',d.toFixed(5)],['ช่วง (1 − α)',`[${(Mn-d).toFixed(5)}, ${(Mn+d).toFixed(5)}]`]]);
+  const Z=1.4+j/100,ya=1.476;
+  cards($('ex2-out'),[['Zₙ = 1.4 + j/100',Z.toFixed(2)],['y_α (α = 0.07)',ya],['(a) reject ถ้า',`Zₙ > ${ya}`],['(b) reject ถ้า',`Zₙ ≤ −${ya}`]]);
+  verdict($('ex2-v'),'ok',`(a) Zₙ = ${Z.toFixed(2)} ≤ ${ya} ⇒ ยอมรับ H₀ ⇒ ยอมรับข้ออ้าง E[Xᵢ] ≤ p₀ · (b) Zₙ = ${Z.toFixed(2)} > −${ya} ⇒ ยอมรับ H₀: E[Xᵢ] > p₀ ⇒ นักศึกษาไม่ควรยอมรับข้ออ้างของผู้ให้บริการ`);
+  $('ex3-ans').textContent=`j = ${j}: f(x, y) = y·e^(−y(x + ${j})), x, y > 0`;
+  const w=Math.sqrt(5)/j;
+  cards($('ex4-out'),[['ω₀ = √5π/j',`${w.toFixed(4)}π ≈ ${(w*Math.PI).toFixed(4)} rad/s`],['m_X(t)','0'],['R_X(t₁, t₂)',`½ cos(${j===1?'√5':'(√5/'+j+')'}π(t₁ − t₂))`]]);
+  const T_=5+(20+j)/2;
+  cards($('ex5-out'),[['λ','5 คน/นาที'],['T = 5 + (20 + j)/2',`${T_} นาที`],['N = λT',`${5*T_} คน`]]);
+}
+function bootExam(){
+  if(!$('ej-j'))return;
+  $('ej-j').addEventListener('change',()=>{$('ej-id').value='';verdict($('ej-v'),'info',`ใช้ j = ${$('ej-j').value}`);renderExam();});
+  $('ej-id').addEventListener('input',examFromId);
+  verdict($('ej-v'),'info','ใช้ j = 2 (ตรงกับชีทเฉลยลายมือ)');renderExam();
+}
+document.addEventListener('DOMContentLoaded',bootExam);if(document.readyState!=='loading')bootExam();
 
 </script>
 </body>
